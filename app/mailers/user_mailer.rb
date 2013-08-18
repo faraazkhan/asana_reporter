@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
 
   def activation_needed_email(user)
     @user = user
-    mail to: user.email, subject: "Welcome to My Awesome Site!"
+    mail to: user.email, subject: "Welcome to Asana Reporter!"
   end
 
   def activation_success_email(user)
