@@ -1,0 +1,12 @@
+= simple_form_for([@user, @asana_account]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :account_name
+    = f.input :api_key, autofocus: true
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'
+    '
+    = link_to 'Back', user_asana_accounts_path, class: 'btn'
+

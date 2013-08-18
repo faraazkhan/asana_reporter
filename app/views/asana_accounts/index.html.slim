@@ -1,0 +1,25 @@
+div.page-header
+  h1 Your Asana Accounts 
+
+table.table.table-striped
+  thead
+    tr
+      th ID
+      th Account Name
+      th Actions
+
+  tbody
+  - @asana_accounts.each do |asana_account|
+    tr
+      td= link_to_if can?(:show, asana_account), asana_account.id, user_asana_accounts_path(current_user,asana_account)
+      td= asana_account.account_name
+      td
+        - if can? :edit, asana_account
+          = link_to 'Edit', edit_user_asana_account_path(current_user,asana_account), class: 'btn btn-mini'
+          '
+        - if can? :destroy, asana_account
+          = link_to 'Delete', user_asana_account_path(current_user,asana_account), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-mini btn-danger'
+          '
+
+- if can? :create, AsanaAccount 
+  = link_to 'New Asana account', new_user_asana_account_path, class: 'btn btn-primary'

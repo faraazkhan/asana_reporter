@@ -1,0 +1,15 @@
+.page-header
+  h1 Asana Account
+
+dl
+  dt Account Name
+  dd= @asana_account.account_name
+
+- if can?(:edit, @asana_account)
+  = link_to 'Edit', edit_user_asana_account_path(current_user, @asana_account), class: 'btn'
+  '
+= link_to 'Back', user_asana_accounts_path, class: 'btn'
+
+- if can?(:destroy, @asana_account)
+  '
+  = link_to'Destroy', user_asana_accounts_path(current_user, @asana_account), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger'
