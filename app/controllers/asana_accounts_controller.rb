@@ -37,6 +37,10 @@ class AsanaAccountsController < ApplicationController
     redirect_to user_asana_accounts_url
   end
 
+  def create_reports
+    render 'create_reports'
+  end
+
 
  
 end

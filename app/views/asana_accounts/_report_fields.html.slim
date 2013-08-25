@@ -1,0 +1,49 @@
+p
+  = label_tag "select-user", "Tasks moved by"
+  = select_tag "select-user", "<option>David</option>".html_safe
+
+/*p*/
+    /*label for="select-user"*/
+    /*select#select-user name="select-user"*/
+      /*option Collin Davis*/
+      /*option (Anyone)*/
+    /*label for="select-project"*/
+      /*| inside the...*/
+      /*br/*/
+      /*br/*/
+    /*select#select-project name="select-project"*/
+      /*option Script Writing*/
+      /*option Video Editing*/
+      /*option Video Delivery*/
+    /*| project*/
+    /*label for="select-section"*/
+      /*| and moved into the...*/
+      /*br/*/
+      /*br/*/
+    /*select#select-section name="select-section" size="1"*/
+      /*option Ready to Write*/
+      /*option Ready for Edit*/
+      /*option Final Review*/
+    /*label for="days"*/
+      /*| section*/
+      /*| within...*/
+      /*br/*/
+      /*br/*/
+      /*| the*/
+      /*| past*/
+    /*input#past-days maxlength="2" name="days" size="4" type="text"*/
+    /*| Days (0 = today)*/
+    /*br/*/
+    /*br/*/
+    /*label for="set_quota"*/
+    /*select#set_quota name="set_quota"*/
+      /*option 0*/
+      /*option 5*/
+      /*option 10*/
+      /*option 15*/
+      /*option 20*/
+        /*br/*/
+        /*br/*/
+        /*input#submit name="submit" type="submit" value="Create Report"*/
+    /*p *Each username, project name, and section name is dynamically populated via Asana.*/
+    /*p * Section Names should be listed identical to how they show in Asana.*/

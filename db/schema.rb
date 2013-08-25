@@ -11,20 +11,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130818213722) do
+ActiveRecord::Schema.define(:version => 20130824193932) do
 
   create_table "asana_accounts", :force => true do |t|
     t.string   "api_key"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.integer  "user_id"
     t.string   "account_name"
+    t.boolean  "sync_in_progress"
+  end
+
+  create_table "assignees", :force => true do |t|
+    t.integer  "asana_id"
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "asana_account_id"
   end
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id",    :null => false
     t.string   "provider",   :null => false
     t.string   "uid",        :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.integer  "asana_id"
+    t.string   "name"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "asana_account_id"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "asana_id"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

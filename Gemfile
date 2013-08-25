@@ -16,6 +16,8 @@ gem 'mysql2'
 gem 'awesome_print'
 gem 'attr_encrypted'
 gem 'asana'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+
 
 group :assets do
   gem 'less-rails'
@@ -36,7 +38,6 @@ group :test, :development do
   gem 'capybara-email'
   gem 'factory_girl_rails'
   gem 'jasminerice'
-  gem 'timecop'
   gem 'simplecov'
   gem 'cane'
   gem 'morecane'

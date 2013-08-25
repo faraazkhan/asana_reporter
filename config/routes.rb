@@ -19,7 +19,11 @@ AsanaReporter::Application.routes.draw do
   match 'reset_password/:id' => 'password_resets#update',  via: :put
 
   resources :users do
-    resources :asana_accounts
+    resources :asana_accounts do
+      member do
+        match 'create_reports' => 'asana_accounts#create_reports', as: :create_reports
+      end
+    end
   end
 
 end

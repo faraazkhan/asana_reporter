@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   attr_accessible :name, :email, :password
-  has_many :asana_accounts
+  has_many :asana_accounts, dependent: :destroy
 
   authenticates_with_sorcery!
 

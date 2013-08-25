@@ -20,6 +20,8 @@ table.table.table-striped
         - if can? :destroy, asana_account
           = link_to 'Delete', user_asana_account_path(current_user,asana_account), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-mini btn-danger'
           '
+        - if can? :edit, asana_account
+          = link_to 'Create Reports', create_reports_user_asana_account_path(current_user, asana_account), class: 'btn btn-mini btn-info'
 
 - if can? :create, AsanaAccount 
   = link_to 'New Asana account', new_user_asana_account_path, class: 'btn btn-primary'
